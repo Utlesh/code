@@ -1,0 +1,77 @@
+Applets are java programs that are
+* Embedded in a web page.
+* Executed by a web browser.
+
+A web server hosts web applications that 
+are collection of web pages, applets, etc.
+
+As a web client (browser) requests a
+web page that has an applet embedded,
+then in response the web server transmits
+the web page and the applet as well.
+
+Next the web browser 
+* Renders the web page.
+* Loads the applet in memory.
+* Begins execution of applets life cycle methods.
+
+Applet Life Cycle Methods
+========================
+The following 4 methods define the
+applets life cycle.
+* public void init()
+* public void start()
+* public void stop()
+* public void destroy()
+
+init
+----
+init is the applets life cycle method
+that is executed first and only once 
+by  the web browser.
+
+It is invoked after applet gets loaded
+in memory.
+ 
+Use it for initialization purpose, something
+similar to a constructor.
+
+start
+-----
+start is the applets life cycle method
+that is invoked by the browser :
+* Once after init.
+* Everytime as the web page is revisited.
+
+Use it for on visit activity.
+example : can begin multithreading.
+
+stop
+-----
+stop is the applets life cycle method
+that is invoked by the browser :
+* Once before destroy.
+* Everytime as the web page is left.
+
+Use it for on page-leave activity.
+example : can stop multithreading.
+
+destroy
+-------
+destroy is the applets life cycle method
+that is executed last and only once by 
+the web browser.
+
+As browsers memory management 
+algorithm decides to remove the applet
+from memory then just before the
+unload browser invokes destroy.
+ 
+Use it for resourse clean up purpose.
+
+To make an applet
+------------------
+1) Define a public class that extends Applet.
+2) Define necessary life cycle methods.
+3) Define necessary member variables and methods.
+4) Embed it in a web page

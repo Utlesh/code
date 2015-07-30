@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+struct node{
+ int data;
+ node *right;
+ node *left;
+}*root;
+
+void inorder(node *root)
+{
+ if(root!=NULL)
+  {
+   inorder(root->left);
+    cout<<root->data<<" ";
+   inorder(root->right);
+  }
+}
+
+node *newNode(int data)
+{
+ node *p = new node;
+ p->data = data;
+ p->left = NULL:
+ p->right = NULL:
+ return p;
+}
+
+node *array_to_tree(int *arr,int strt,int end)
+{
+ if(strt>end)
+  return NULL;
+ 
+ int mid = (strt+end)/2;
+ node *root = newNode(arr[mid]);
+ root->left = array_to_tree(arr,strt,mid-1);
+ root->right = array_to_tree(arr,mid+1,end);
+ return root;
+}
+
+int main()
+{
+ int arr[] = {9,17,19,21,31,42,92};
+ root = array_to_tree(arr,0,6);
+ inorder(root);
+ cout<<"\n";
+ return 0; 
+}

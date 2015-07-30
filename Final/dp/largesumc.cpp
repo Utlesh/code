@@ -1,0 +1,92 @@
+#include<iostream>
+using namespace std;
+#include<string.h>
+
+int main()
+{
+ char arr1[102],arr2[102];
+ cin>>arr1>>arr2;
+ int ans[103];
+ int len1 = strlen(arr1);
+ int len2 = strlen(arr2);
+ int i=0,j=0,sum=0,rem=0;
+
+ if(len1>=len2)
+ {
+   i = len1-1;
+
+   for(int j=len2-1;j>=0;--j)
+     {
+       sum = arr1[i] + arr2[j] + rem - 96;
+       rem=0;
+       if(sum>9)
+        {
+         sum = sum%10;
+         rem = 1;
+        }
+  
+       ans[i] = sum;
+       --i;
+     }
+   
+   for(int j=i;j>=0;--j)
+    {
+      sum = arr1[j] + rem - 48;
+      rem=0;
+      if(sum>9)
+        {
+         sum = sum%10;
+         rem = 1;
+        }
+       ans[j] = sum;
+    }
+  
+
+   cout<<"Result = ";
+   if(rem>0)
+    cout<<rem;
+   for(int i=0;i<len1;++i)
+     cout<<ans[i];
+    cout<<"\n";
+
+  }
+
+else if(len1<len2)
+ {
+   i = len2-1;
+   for(int j=len1-1;j>=0;--j)
+     {
+       sum = arr1[j] + arr2[i] + rem - 96;
+       rem=0;
+       if(sum>9)
+        {
+         sum = sum%10;
+         rem = 1;
+        }
+       ans[i] = sum;
+       --i;
+     }
+   
+   for(int j=i;j>=0;--j)
+    {
+      sum = arr2[j] + rem - 48;
+      rem=0;
+      if(sum>9)
+        {
+         sum = sum%10;
+         rem = 1;
+        }
+       ans[j] = sum;
+    }
+ 
+   cout<<"Result = "; 
+   if(rem>0)
+    cout<<rem;
+   for(int i=0;i<len2;++i)
+     cout<<ans[i];
+    cout<<"\n";
+
+  }
+
+return 0;
+}

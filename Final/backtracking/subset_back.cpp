@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+#include<algorithm>
+
+void printsubset(int arr[],int t_size)
+{ 
+  for(int i=0;i<t_size;++i)
+   cout<<arr[i]<<"  ";
+   cout<<"\n";
+}
+
+void backtrack(int weights[],int s_size,int arr[],int t_size,int sum,int itr,int target)
+{
+  if(sum==target)
+   {
+    printsubset(arr,t_size);
+    return ;
+   }
+   else
+   {
+    if(itr<s_size&&sum+weights[itr]<=target)
+       {
+        for(int i=itr;i<s_size;++i)
+         {
+          arr[t_size] = weights[i] ;
+         if(sum+weights[i]<=target)
+          backtrack(weights,s_size,arr,t_size+1,sum+weights[i],i+1,target);
+         }
+       } 
+   }
+}
+
+void print_subset(int weights[],int s_size,int target)
+{
+ int *arr = new int[s_size];
+ int total_sum = 0;
+ sort(weights,weights + s_size);
+ for(int i=0;i<s_size;++i)
+   total_sum += weights[i];
+ if(total_sum>=weights[0]&&total_sum>=target) 
+ backtrack(weights,s_size,arr,0,0,0,target);
+ 
+}
+
+int main()
+{
+ int weights[] = {15, 22, 14, 26, 32, 9, 16, 8};
+ int target = 53;
+ print_subset(weights,8,target); 
+ 
+ return 0;
+}

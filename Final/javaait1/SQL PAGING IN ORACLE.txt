@@ -1,0 +1,16 @@
+SQL> select records.* from
+  2  (
+  3  select subjectname, rownum r
+  4  from subjects
+  5  ) records
+  6  where records.r >=1 and
+  7  records.r <=10;
+
+
+SQL> select records.* from
+  2  (
+  3  select subjectname, rownum r
+  4  from subjects
+  5  ) records
+  6  where records.r >=11 and
+  7  records.r <=20;

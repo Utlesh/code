@@ -1,0 +1,103 @@
+#include<iostream>
+using namespace std;
+
+struct node{
+ int data;
+ node *left,*right;
+};
+
+int k=0;
+struct node *root;
+struct node *mid;
+
+void Mklist()
+{
+ int data,num,i;
+ cout<<"How many node u want:\n";
+ cin>>num;
+ 
+ for(i=0;i<num;++i)
+  {
+   if(root==NULL)  
+    {
+     cin>>data;
+     root = new node;
+     root->left = NULL;
+     root->right = NULL;
+     root->data = data;
+     mid = root;
+    }
+    else
+    {
+     cin>>data;
+     node *temp = new node; 
+     temp->left = NULL;
+     temp->data = data;
+     temp->right = root;
+     root->left = temp;
+     root = temp;
+     if(i%2==0)
+      mid = mid->left;
+    }
+  }
+ k = i;
+}
+
+void deleteMid()
+{
+ struct node *prev,*next;
+  if(k==1||k==2)
+   {
+   if(k==1)
+    {
+      root = NULL;
+      mid = NULL;
+      k--;
+    }
+    else
+    {
+     root = root->right;
+     
+    }
+   }
+ if(k!=1&&k!=2)
+ {
+ prev = mid->left;
+ next = mid->right;
+ prev->right = next;
+ next->left = prev;
+ if((k)%2==0)
+   mid = mid->left;
+ else
+  mid  = mid->right;
+ --k;
+ }
+ else
+  cout<<"Kutta\n"; 
+}
+
+void display(node *root)
+{
+ while(root)
+  {
+   cout<<root->data<<" ";
+   root = root->right;
+  }
+}
+
+int main()
+{
+ Mklist();
+ display(root);
+ cout<<"\n";
+ deleteMid();
+ display(root);
+ cout<<"\n";
+ //deleteMid();
+ display(root);
+ cout<<"\n";
+ //deleteMid();
+ display(root);
+ cout<<"\n";
+ return 0;
+}

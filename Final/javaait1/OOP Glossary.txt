@@ -1,0 +1,73 @@
+class
+------
+A class is a collection of related
+variables and methods.
+A class defines a new custom
+datatype in Java.
+
+Conceptually a class represents
+a real life entity.
+
+The member variables of the
+class represent the characteristics
+of the entity.
+
+The member methods of the
+class represent the operations
+of the entity.
+
+As an int is used by defining its
+variables similarly a class is used 
+by defining its objects.
+
+Member Variable
+---------------
+Member variables are variables
+that belong to the class.
+They may be
+* static
+* non static (by default)
+
+A non static member variable
+is allocated inside every object
+of the class.
+...
+
+
+Member Method
+---------------
+Member methods are methods
+that belong to the class.
+They may be
+* static
+* non static (by default)
+...
+
+Object
+-------
+An object is an entity that can
+store and process data.
+An object is an instance of a
+class i.e. its datatype is a class.
+
+this
+----
+this is a system defined formal
+parameter for non static methods
+of the class.
+
+this is a reference of type current class.
+
+this gets the address of the caller 
+object of the method.
+
+this is auto applied as a caller
+object for other members used
+inside the method.
+
+this is a final reference i.e.
+it cannot be modified.
+
+
+
+

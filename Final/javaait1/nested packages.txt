@@ -1,0 +1,47 @@
+Nested Packages
+--------------
+A nested package is a package inside a package.
+It is a collection of 
+* classes.
+* interfaces.
+* nested packages.
+ 
+
+To create a nested package
+--------------------------
+To create a nested package create a sub-directory
+* with the same name as of the nested package.
+* inside the outer package directory.
+
+
+To add classes/interfaces in a nested package
+----------------------------------------
+To add classes/interfaces in a nested package
+* Define the class/interface with nested package statement as its first statement.
+* Place (save) the class/interface in the nested package directory. 
+
+Why nested packages?
+---------------------
+A nested package is used for 
+better organization of code.
+
+Example
+Case 1: Without nested package
+Engineering {C, Cpp, Java, HTML}
+
+Case 2: With nested packages
+Engineering { FE{C}, SE{Cpp}, TE{Java, HTML} }
+
+How to use a package?
+----------------------
+* The public classes and interfaces of a nested package can be "imported" and used by other classes.
+
+
+About import for nested packages
+------------------------------
+"import" statement is used to get access of a public class/interface of a particular package.
+It is applied as follows:
+ 
+ import package.nestedpackage.*;
+ import package.nestedpackage.ParticularClass;
+

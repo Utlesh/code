@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+void primeFac(int num)
+{
+ int k=0;
+ int arr[10];
+   for(int j=2;j<=num;++j)
+    {
+     if(num%j==0)
+      {
+       arr[k] = j;
+       num = num/j;
+       ++k;
+       j=1;
+      }
+   }
+
+ for(int i=0;i<k;++i)
+  cout<<arr[i]<<" ";
+  cout<<"\n";
+}
+
+int main()
+{
+ cout<<"Entre the number:\n";
+ cin>>num;
+ primeFac(num);
+ return 0;
+}

@@ -1,0 +1,76 @@
+Package
+---------
+A package is a collection of 
+* classes.
+* interfaces.
+* nested packages.
+
+To create a package
+-------------------
+To create a package, create a directory
+with the same name as of the package.
+
+
+To add classes/interfaces in a package
+-----------------------------------
+To add classes/interfaces in a package
+* Define the class/interface with package statement as its first statement.
+* Place (save) the class/interface in the package directory. 
+
+Why packages?
+-----------------
+A package is used to
+* create java applications/projects.
+* create java libraries.
+* group related classes/interfaces in one compartment, avoiding mixup and name conflicts.
+
+How to use a package?
+----------------------
+* A package can be converted into an executable jar file and directly used.
+* The public classes and interfaces of a package can be "imported" and used by other classes.
+
+
+About import
+---------------
+"import" statement is used to get access of a public class/interface of a particular package.
+It is applied as follows:
+ 
+ import package.*;
+ import package.ParticularClass;
+
+How is the import statement resolved?
+----------------------------------
+To resolve an import system uses
+* Environment Variable : CLASSPATH
+* Compilation/Execution option : -classpath
+
+Set the Environmen Variables As Follows :
+---------------------------------------
+Right click on My Computer
+Select Properties
+Select Advanced
+Select Environment Variables
+Under System Variables
+Create/Edit : CLASSPATH 
+  Name : CLASSPATH
+  Value : <existing>;.;f:
+OK to all windows 
+
+Set the Compilation/Execution Option As Follows :
+--------------------------------------------
+c:\javaait>javac -classpath "%CLASSPATH%";f: Learner.java
+c:\javaait>java -classpath "%CLASSPATH%";f: Learner
+
+
+
+============================================
+public class/interface
+
+A public class/interface is a class/interface
+that can be 
+* used within the package
+* imported and used outside the package
+
+It is compulsory to save a public class/interface
+in a file with same name as of the class/interface.
+

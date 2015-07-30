@@ -1,0 +1,62 @@
+Method call and definition binding
+============================
+
+It is the role of the compiler 
+to bind a method call with the
+methods definition.
+For such a binding, the compiler
+matches the signature used in
+the method call with the signatures
+of the methods.
+
+If a match is found then binding
+is done, otherwise a compile 
+error is raised.
+
+Such an approach to bind a 
+methods call with the appropriate
+defintion is called as "compile
+time binding" or "early binding".
+
+* Most of the method calls.
+* Calls to overloaded methods 
+or constructors.
+* Calls to all static methods.
+Are cases of compile time
+binding.
+
+==============================
+
+Consider the following :
+* A hierarchy of classes defined by inheritance.
+* The sub class overrides some super class methods.
+* A super class reference is used to refer to object of super/sub class.
+* Using the super class reference, an overridden method is invoked.
+
+For a case as considered above
+the compiler is not able to bind 
+the method call with any methods
+definition, because
+
+1) Type of object is unknown
+2) Multiple definitions of overridden methods (duplicate signatures) are found.
+
+At program run time, when
+such a call is encountered, then
+system activates Java's runtime
+type identification mechanism
+to detect the actual type of 
+object being refered by the
+super class reference.
+
+Next the call to such methods
+is bound with the definition 
+provided by the class of the
+object.
+
+This approach to bind a method
+call with a definition is called
+as "run time binding"  or
+"late binding" or "dynamic method
+dispatch".
+

@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+bool is_subset(int set[],int a,int b)
+{
+ int dp[b+1][a+1];
+ for(int i=1;i<=b;++i)
+     dp[i][0] = false;
+ for(int i=0;i<=a;++i)
+    dp[0][i] = true;
+
+
+ for(int i=1;i<=b;++i)
+  for(int j=1;j<=a;++j)
+   {
+    dp[i][j] = dp[i][j-1];
+    if(set[j-1]<=i)
+     dp[i][j] = dp[i][j-1] || dp[i-set[j-1]][j-1];
+   } 
+
+ return dp[b][a];
+}
+
+int main()
+{
+ int set[] = {3, 34, 4, 12, 5, 2};
+ if(is_subset(set,6,13))
+  cout<<"Sum is possible\n";
+ else
+  cout<<"Sum is not possible\n";
+ return 0;
+}

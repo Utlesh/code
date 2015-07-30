@@ -1,0 +1,83 @@
+class Client
+{
+  purchase(this )
+  {
+    VegV v = new VegV(this);
+    c = v.inquiry(vegName);
+    minus = v.discount();
+    v.sell();
+  }
+
+  qty()
+  {}
+}
+
+class HU extends Client
+{
+  qty()
+  {}
+
+}
+
+class Res extends Client
+{
+  qty()
+  {}
+
+}
+
+class Animals extends Client
+{
+  qty()
+  {}
+
+}
+
+class Gov extends Client
+{
+  qty()
+  {}
+
+}
+
+
+vegetableV
+{
+  Client ref;
+
+  VegetableV(Client c)
+  {
+    ref = c;
+  }
+
+  inquiry(veg name) 
+  {
+     cost
+  }
+
+  discount()
+  {
+      q = ref.qty();
+      ...
+      val;
+  }
+
+  
+  sell()
+  {
+     .....
+  }  
+}
+
+main()
+{
+  Client arr[] = new Client[4];
+  arr[0] = new HU();
+  arr[1] = new Restu();
+  arr[2] = new Gov();
+  arr[3] = new Animal();
+  
+  for(i =0 ; i< arr.length; i++)
+    arr[i].purchase();
+
+}
